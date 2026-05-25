@@ -1,19 +1,38 @@
-import sympy
+#import sympy
 from typing import Dict
 
-# Controlla il file readme.md per i dettagli su ciascun sub-task
+ #Controlla il file readme.md per i dettagli su ciascun sub-task
 
 def calcola_derivata(espressione: str, variabile: str) -> sympy.Expr:
     """Sub-task 1: Calcolare una Derivata."""
     pass
 
+import sympy as sp
+x = sp.symbols('x')
+funzione_str = "x**3"
+funzione = sp.sympify(funzione_str)
+derivata = sp.diff(funzione, x)
+print(f"La derivata di {funzione_str} è: {derivata}")
+
+
 def calcola_integrale_definito(espressione: str, variabile: str, estremo_inf: float, estremo_sup: float) -> sympy.Expr:
     """Sub-task 2: Calcolare un Integrale Definito."""
     pass
+from sympy import symbols, integrate
+x = symbols('x')
+f = 2*x
+integral = integrate(f, (x,0,1))
+print('il valore dell integrale è:', integral)
 
 def calcola_limite(espressione: str, variabile: str, punto: str) -> sympy.Expr:
     """Sub-task 3: Calcolare un Limite."""
     pass
+import sympy as sp
+x = symbols('x')
+f = (x+1)/(x-1)
+limite = sp.limit(f, x, 0)
+print(limite)
+
 
 def calcola_polinomio_taylor(espressione: str, variabile: str, punto: float, ordine: int) -> sympy.Expr:
     """Sub-task 4: Calcolare una Serie di Taylor."""
@@ -30,5 +49,5 @@ def main():
     print("Sub-task 4:", calcola_polinomio_taylor("exp(x)", "x", 0.0, 4))
     print("Sub-task 5:", risolvi_sistema_lineare("x + y - 3", "x - y - 1", "x", "y"))
 
-if __name__ == "__main__":
+#if __name__ == "__main__":
     main()
